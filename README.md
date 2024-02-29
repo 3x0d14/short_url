@@ -1,2 +1,2 @@
 # URL Shortener
-A project meant to be a mean of discovering Rocket and Diesel
+I embarked on this project as a personal exploration into the Rust programming language, alongside the Rocket and Diesel frameworks. As a developer, my goal was twofold: to expand my own expertise and to give back to the open-source community. I aimed to achieve this by crafting a small, beginner-friendly project that serves as a practical introduction to Rocket, Rust, and the Diesel ORM, empowering newcomers to dive into these technologies with confidence.
