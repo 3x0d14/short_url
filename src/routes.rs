@@ -20,6 +20,7 @@ pub async fn test(pool: &State<PgPool>) -> Json<Vec<Url>> {
 }
 
 /// The main endpoint for the application, takes as input a url, hashes it and stores it in the database
+/// I use a hashing function as a mean to shorten the URL, other methods could be used
 /// while returning a link to a shortened url in Json format
 
 #[post("/shorten", data = "<url>")]
@@ -28,7 +29,7 @@ pub fn shorten(
     pool: &State<PgPool>,
     host: HostHeader,
 ) -> Result<Json<OutboundUrl>, Status> {
-    let conn = pool.get().unwrap();
+    let conn = pool.get().expect("Could not get a grip on the pool");
     let mut s = DefaultHasher::new();
     let destination = String::from(url.url);
     destination.hash(&mut s);
